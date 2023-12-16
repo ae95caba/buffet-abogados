@@ -35,13 +35,11 @@ section.hero {
     gap: 1rem;
     h1 {
       font-weight: 500;
+      font-size: 1.8rem;
     }
     h3 {
       font-size: 0.8rem;
       text-transform: uppercase;
-    }
-    p {
-      font-size: 0.9rem;
     }
   }
   .container {
@@ -51,23 +49,51 @@ section.hero {
     position: relative;
     .years {
       position: absolute;
-      width: 8rem;
+      width: 9rem;
       border: solid black 1px;
       top: 40%;
       left: -10%;
       background-color: white;
       padding: 1rem 1rem;
       span {
-        font-size: 1.2rem;
+        font-size: 2rem;
         font-weight: 900;
       }
       p {
-        font-size: 0.7rem;
+        font-size: 0.8rem;
+        hyphens: auto;
       }
     }
     .gatsby-image-wrapper {
       max-height: 20rem;
       aspect-ratio: 1/1;
+    }
+  }
+}
+
+section.services {
+  .content {
+    //
+    height: auto;
+    border: none;
+    //
+    display: flex;
+    gap: 4rem;
+    flex-direction: column;
+    align-items: center;
+    ul {
+      border: solid black 1px;
+      display: grid;
+      width: 80%;
+
+      justify-content: center;
+      grid-template-columns: repeat(auto-fit, 15rem);
+      gap: 2rem;
+      li {
+        text-align: center;
+        padding: 0.5rem 0rem;
+        border: solid black 1px;
+      }
     }
   }
 }

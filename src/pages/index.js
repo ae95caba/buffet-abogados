@@ -25,13 +25,25 @@ const IndexPage = () => (
         <div className="years">
           <p>
             <span>25</span> <br />
-            Anios de experiencia en el campo
+            Años de experiencia en el campo
           </p>
         </div>
       </div>
     </Section>
     <Section className={"achievements"} />
-    <Section className={"services"} />
+    <Section className={"services"}>
+      <h2>Areas loremipsum</h2>
+      <ul>
+        <li>Trabajo</li>
+        <li>Civil</li>
+        <li>Criminal</li>
+        <li>Propiedad Intelectual</li>
+        <li>Propiedad</li>
+        <li>Fraude</li>
+        <li>Violencia domestica</li>
+        <li>Medico</li>
+      </ul>
+    </Section>
     <Section className={"team"} />
   </main>
 )
