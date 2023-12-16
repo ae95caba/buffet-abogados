@@ -1,8 +1,11 @@
 import * as React from "react"
+import { useState } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import "./index.scss"
 import linkedin from "../images/linkedin.svg"
+import CountUp from "react-countup"
+import ScrollTrigger from "react-scroll-trigger"
 import twitter from "../images/twitter.svg"
 import instagram from "../images/instagram.svg"
 import facebook from "../images/facebook.svg"
@@ -69,7 +72,11 @@ const IndexPage = () => (
         </div>
       </div>
     </Section>
-    <Section className={"achievements"} />
+    <Section className={"achievements"}>
+      <Counter value={300} text={"Casos ganados"} duration={4} />
+      <Counter value={400} text={"Cargos desestimados"} duration={5} />
+      <Counter value={1000} text={"Clientes satisfechos"} duration={6} />
+    </Section>
     <Section className={"services"}>
       <h2>Areas loremipsum</h2>
       <ul>
@@ -117,6 +124,22 @@ const IndexPage = () => (
     </Section>
   </main>
 )
+
+function Counter({ value, duration, text }) {
+  const [startCounters, setStartCounters] = useState(false)
+  return (
+    <ScrollTrigger onEnter={() => setStartCounters(true)} className="container">
+      <p>
+        {startCounters ? (
+          <CountUp end={value} duration={duration} start={0} delay={0.5} />
+        ) : (
+          "0"
+        )}
+      </p>
+      <p>{text}</p>
+    </ScrollTrigger>
+  )
+}
 
 /**
  * Head export to define metadata for the page
