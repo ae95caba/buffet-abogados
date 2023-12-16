@@ -9,3 +9,47 @@ main > section:nth-child(2) {
 main > section:nth-child(3) {
   background-color: pink;
 }
+
+section.hero {
+  .content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 4rem;
+    justify-content: center;
+  }
+  .container.first {
+    max-width: 20rem !important;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+
+    gap: 1rem;
+  }
+  .container {
+    border: solid black 1px;
+  }
+  .container.second {
+    position: relative;
+    .years {
+      position: absolute;
+      max-width: 8rem;
+      border: solid black 1px;
+      top: 40%;
+      left: -10%;
+      background-color: white;
+      padding: 1rem 1rem;
+      span {
+        font-size: 1.2rem;
+        font-weight: 900;
+      }
+      p {
+        font-size: 0.7rem;
+      }
+    }
+    .gatsby-image-wrapper {
+      max-height: 20rem;
+      aspect-ratio: 1/1;
+    }
+  }
+}

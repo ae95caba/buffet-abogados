@@ -2,24 +2,37 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import "./index.scss"
+import Hero from "../images/GatsbyImages/Hero"
 import Seo from "../components/seo"
+import Section from "../components/Section"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 const IndexPage = () => (
   <main id="home">
-    <section className="hero">
-      <div className="content"></div>
-    </section>
-    <section className="motto">
-      <div className="content"></div>
-    </section>
-    <section class="stats">
-      <div className="content"></div>
-    </section>
-    <section className="call-to-action">
-      <div className="content"></div>
-    </section>
+    <Section className={"hero"}>
+      <div className="container first">
+        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
+        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt et
+          perferendis illum, sint tenetur quod.
+        </p>
+        <button>Contacto</button>
+      </div>
+      <div className="container second">
+        <Hero />
+        <div className="years">
+          <p>
+            <span>25</span> <br />
+            Anios de experiencia en el campo
+          </p>
+        </div>
+      </div>
+    </Section>
+    <Section className={"achievements"} />
+    <Section className={"services"} />
+    <Section className={"team"} />
   </main>
 )
 
