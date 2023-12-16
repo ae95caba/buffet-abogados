@@ -2,12 +2,51 @@ import * as React from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import "./index.scss"
+import linkedin from "../images/linkedin.svg"
+import twitter from "../images/twitter.svg"
+import instagram from "../images/instagram.svg"
+import facebook from "../images/facebook.svg"
 import Hero from "../images/GatsbyImages/Hero"
 import Seo from "../components/seo"
 import Section from "../components/Section"
+import Member1 from "../images/GatsbyImages/Member1"
+import Member2 from "../images/GatsbyImages/Member2"
+import Member3 from "../images/GatsbyImages/Member3"
+import Member4 from "../images/GatsbyImages/Member4"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
+let members = [
+  {
+    name: "Pablito Lopez",
+    position: "Abogado lider",
+    image: <Member1 />,
+    linkedin: "linkedin/another-person",
+    facebook: "asdfasdf",
+    twitter: "fasfa",
+    instagram: "asf",
+  },
+  {
+    name: "Franco Garcia",
+    position: "Abogado asistente",
+    image: <Member2 />,
+    linkedin: "linkedin/another-person",
+  },
+  {
+    name: "Fernanda Perez",
+    position: "Secretaria",
+    image: <Member3 />,
+    linkedin: "linkedin/another-person",
+    facebook: "fasdfa",
+  },
+  {
+    name: "Juan Russo",
+    position: "Abogado asistente",
+    image: <Member4 />,
+    linkedin: "linkedin/another-person",
+    twitter: "fasdfa",
+  },
+]
 const IndexPage = () => (
   <main id="home">
     <Section className={"hero"}>
@@ -44,7 +83,38 @@ const IndexPage = () => (
         <li>Medico</li>
       </ul>
     </Section>
-    <Section className={"team"} />
+    <Section className={"team"}>
+      <h2>Nuestro Equipo</h2>
+      <ul>
+        {members.map(member => (
+          <li>
+            {member.image}
+            <div className="links">
+              {member.linkedin && (
+                <a href={member.linkedin}>
+                  <img src={linkedin} />
+                </a>
+              )}
+              {member.facebook && (
+                <a href={member.facebook}>
+                  <img src={facebook} />
+                </a>
+              )}
+              {member.twitter && (
+                <a href={member.twitter}>
+                  <img src={twitter} />
+                </a>
+              )}
+              {member.instagram && (
+                <a href={member.instagram}>
+                  <img src={instagram} />
+                </a>
+              )}
+            </div>
+          </li>
+        ))}
+      </ul>
+    </Section>
   </main>
 )
 

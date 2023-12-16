@@ -23,11 +23,12 @@ section.hero {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    gap: 4rem;
+    column-gap: 6rem;
+    row-gap: 3rem;
     justify-content: center;
   }
   .container.first {
-    max-width: 20rem !important;
+    max-width: 24rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -60,7 +61,7 @@ section.hero {
         font-weight: 900;
       }
       p {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
         hyphens: auto;
       }
     }
@@ -93,6 +94,49 @@ section.services {
         text-align: center;
         padding: 0.5rem 0rem;
         border: solid black 1px;
+      }
+    }
+  }
+}
+
+section.team {
+  .content {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem; //
+    height: auto;
+    border: none;
+    //
+    ul {
+      display: flex;
+      gap: 2rem;
+      flex-wrap: wrap;
+      justify-content: center;
+      border: solid black 1px;
+      li {
+        position: relative;
+        .links {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          left: 50%;
+          bottom: 10%;
+          display: flex;
+          gap: 1.5rem;
+          padding: 0.5rem;
+          border: solid white 1px;
+          a {
+            img {
+              width: 1.5rem;
+              vertical-align: middle;
+              filter: invert(100%);
+            }
+          }
+        }
+        .gatsby-image-wrapper {
+          height: 15rem;
+          aspect-ratio: 1/1;
+          border: solid black 1px;
+        }
       }
     }
   }
