@@ -50,6 +50,26 @@ let members = [
     twitter: "fasdfa",
   },
 ]
+
+let services = {
+  laboral: [
+    "Accidentes de trabajo",
+    "Despidos",
+    "Trabajo en negro",
+    "Acoso laboral",
+  ],
+  penal: [
+    "Delitos dolosos",
+    "Ley de estupefacientes",
+    "Robos",
+    "Portacion de armas",
+    "Secuestros",
+    "Lesiones",
+    "Allanamientos",
+    "Morigeracion de condenas",
+  ],
+}
+
 const IndexPage = () => (
   <main id="home">
     <Section className={"hero"}>
@@ -78,17 +98,17 @@ const IndexPage = () => (
       <Counter value={1000} text={"Clientes satisfechos"} duration={6} />
     </Section>
     <Section className={"services"}>
-      <h2>Areas loremipsum</h2>
-      <ul>
-        <li>Trabajo</li>
-        <li>Civil</li>
-        <li>Criminal</li>
-        <li>Propiedad Intelectual</li>
-        <li>Propiedad</li>
-        <li>Fraude</li>
-        <li>Violencia domestica</li>
-        <li>Medico</li>
-      </ul>
+      <h2>Areas de practica</h2>
+      {Object.keys(services).map(key => (
+        <div className="container" key={key}>
+          <h3>{key}</h3>
+          <ul>
+            {services[key].map(value => (
+              <li key={value}>{value}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </Section>
     <Section className={"team"}>
       <h2>Nuestro Equipo</h2>
