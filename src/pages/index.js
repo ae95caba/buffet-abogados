@@ -173,10 +173,11 @@ function Counter({ value, duration, text }) {
         {startCounters ? (
           <CountUp end={value} duration={duration} start={0} delay={0.5} />
         ) : (
-          "0"
+          <span>0</span>
         )}
+        <br />
+        {text}
       </p>
-      <p>{text}</p>
     </ScrollTrigger>
   )
 }
