@@ -55,19 +55,42 @@ section.hero {
       top: 40%;
       left: -10%;
       background-color: white;
-      padding: 1rem 1rem;
+      padding: 0.5rem;
       span {
         font-size: 2rem;
         font-weight: 900;
       }
       p {
-        font-size: 0.9rem;
+        font-size: 0.8rem;
         hyphens: auto;
       }
     }
     .gatsby-image-wrapper {
       max-height: 20rem;
       aspect-ratio: 1/1;
+    }
+  }
+}
+
+section.about {
+  .content {
+    //
+    height: auto;
+    border: none;
+    //
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    h2 {
+    }
+    p {
+      column-count: 2;
+      width: 35rem;
+    }
+    p:first-letter {
+      font-size: 4rem;
+      initial-letter: 2;
+      margin-right: 1rem;
     }
   }
 }
@@ -173,7 +196,7 @@ section.achievements {
       & p:first-of-type {
         font-weight: 900;
         text-align: center;
-        font-size: 2rem;
+        font-size: 1.5rem;
 
         span {
           position: relative;
@@ -185,7 +208,6 @@ section.achievements {
         }
       }
       p {
-        font-size: 1.2rem;
         text-transform: uppercase;
         letter-spacing: 1px;
         word-spacing: 4px;

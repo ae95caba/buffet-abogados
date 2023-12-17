@@ -10,6 +10,7 @@ import twitter from "../images/twitter.svg"
 import instagram from "../images/instagram.svg"
 import facebook from "../images/facebook.svg"
 import Hero from "../images/GatsbyImages/Hero"
+import About from "../images/GatsbyImages/About"
 import Seo from "../components/seo"
 import Section from "../components/Section"
 import Member1 from "../images/GatsbyImages/Member1"
@@ -57,10 +58,12 @@ let services = {
     "Despidos",
     "Trabajo en negro",
     "Acoso laboral",
+    "Diferencias laborales",
   ],
   penal: [
     "Delitos dolosos",
     "Ley de estupefacientes",
+
     "Robos",
     "Portacion de armas",
     "Secuestros",
@@ -74,11 +77,14 @@ const IndexPage = () => (
   <main id="home">
     <Section className={"hero"}>
       <div className="container first">
-        <h3>Lorem ipsum dolor sit amet consectetur.</h3>
-        <h1>Lorem ipsum dolor sit amet consectetur adipisicing elit.</h1>
+        <h3>SERVICIO LEGAL DE EXCELENCIA</h3>
+        <h1>
+          JM & Asociados.
+          <br /> Estudio juridico.
+        </h1>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt et
-          perferendis illum, sint tenetur quod.
+          Responsabilidad y eficacia, orientada a la resolución de conflictos en
+          el menor tiempo posible
         </p>
         <button>Contacto</button>
       </div>
@@ -91,6 +97,20 @@ const IndexPage = () => (
           </p>
         </div>
       </div>
+    </Section>
+    <Section className={"about"}>
+      <h2>
+        Porque somos tu
+        <br /> mejor eleccion
+      </h2>
+      <p>
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi vitae,
+        quasi vero rem voluptatibus dolorem illum! Natus a similique placeat
+        illo neque, blanditiis optio reprehenderit totam eligendi impedit
+        maxime, explicabo tempora officiis recusandae ducimus sed debitis cumque
+        rerum quae earum voluptatem soluta laboriosam magni. Vel nemo illum
+        eaque possimus necessitatibus.
+      </p>
     </Section>
     <Section className={"achievements"}>
       <Counter value={300} text={"Casos ganados"} duration={4} />
