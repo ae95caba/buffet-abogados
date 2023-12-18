@@ -180,10 +180,15 @@ const IndexPage = () => {
             loop={true}
           />
         </div>
-        <form action="">
+        <form action="https://formsubmit.co/ae95caba@gmail.com" method="POST">
           <legend>Lorem ipsum dolor sit amet.</legend>
-          <input type="email" name="email" id="" placeholder="Email" />
-          <input type="text" name="name" placeholder="Nombre" />
+          <input type="email" name="email" id="" placeholder="Email" required />
+          <input type="text" name="name" placeholder="Nombre" required />
+          <input
+            type="hidden"
+            name="_next"
+            value="http://localhost:8000/"
+          ></input>
           <textarea
             name="message"
             id=""
