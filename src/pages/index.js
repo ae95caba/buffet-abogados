@@ -89,7 +89,7 @@ const IndexPage = () => {
           </h1>
           <p>
             Responsabilidad y eficacia, orientada a la resolución de conflictos
-            en el menor tiempo posible
+            en el menor tiempo posible.
           </p>
           <button>Contacto</button>
         </div>
@@ -102,6 +102,11 @@ const IndexPage = () => {
             </p>
           </div>
         </div>
+      </Section>
+      <Section className={"achievements"}>
+        <Counter value={300} text={"Casos ganados"} duration={4} />
+        <Counter value={400} text={"Cargos desestimados"} duration={5} />
+        <Counter value={1000} text={"Clientes satisfechos"} duration={6} />
       </Section>
       <Section className={"about"}>
         <h2>
@@ -119,11 +124,7 @@ const IndexPage = () => {
           clientes.
         </p>
       </Section>
-      <Section className={"achievements"}>
-        <Counter value={300} text={"Casos ganados"} duration={4} />
-        <Counter value={400} text={"Cargos desestimados"} duration={5} />
-        <Counter value={1000} text={"Clientes satisfechos"} duration={6} />
-      </Section>
+
       <Section className={"services"}>
         <h2>Areas de practica</h2>
         {Object.keys(services).map(key => (
