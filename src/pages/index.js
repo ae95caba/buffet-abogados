@@ -59,6 +59,7 @@ let services = {
     "Trabajo en negro",
     "Acoso laboral",
     "Diferencias laborales",
+    "Moratorias",
   ],
   penal: [
     "Delitos dolosos",
@@ -104,12 +105,14 @@ const IndexPage = () => (
         <br /> mejor eleccion
       </h2>
       <p>
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Animi vitae,
-        quasi vero rem voluptatibus dolorem illum! Natus a similique placeat
-        illo neque, blanditiis optio reprehenderit totam eligendi impedit
-        maxime, explicabo tempora officiis recusandae ducimus sed debitis cumque
-        rerum quae earum voluptatem soluta laboriosam magni. Vel nemo illum
-        eaque possimus necessitatibus.
+        Nuestro estudio se compone de un equipo de cuatro profesionales
+        altamente especializados en las áreas laboral y penal. Con una sólida
+        trayectoria y valores fundamentales centrados en la ética y la
+        transparencia, nos comprometemos a brindar a nuestros clientes una
+        representación legal excepcional. Nuestro enfoque personalizado,
+        combinado con experiencia probada, nos distingue en la resolución
+        exitosa de casos y la defensa efectiva de los derechos de nuestros
+        clientes.
       </p>
     </Section>
     <Section className={"achievements"}>
@@ -161,6 +164,24 @@ const IndexPage = () => (
           </li>
         ))}
       </ul>
+    </Section>
+    <Section className={"email"}>
+      <div className="container">
+        <h2>Contactanos</h2>
+      </div>
+      <form action="">
+        <legend>Lorem ipsum dolor sit amet.</legend>
+        <input type="email" name="email" id="" placeholder="Email" />
+        <input type="text" name="name" placeholder="Nombre" />
+        <textarea
+          name="message"
+          id=""
+          cols="30"
+          rows="10"
+          placeholder="Escribe tu mensaje"
+        ></textarea>
+        <button>Enviar</button>
+      </form>
     </Section>
   </main>
 )
