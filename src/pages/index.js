@@ -1,5 +1,5 @@
 import * as React from "react"
-import { useState } from "react"
+import { useState, useRef } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import "./index.scss"
@@ -17,6 +17,8 @@ import Member1 from "../images/GatsbyImages/Member1"
 import Member2 from "../images/GatsbyImages/Member2"
 import Member3 from "../images/GatsbyImages/Member3"
 import Member4 from "../images/GatsbyImages/Member4"
+import Lottie, { LottieRefCurrentProps } from "lottie-react"
+import animationData from "../animations/contact-me.json"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
@@ -74,117 +76,127 @@ let services = {
   ],
 }
 
-const IndexPage = () => (
-  <main id="home">
-    <Section className={"hero"}>
-      <div className="container first">
-        <h3>SERVICIO LEGAL DE EXCELENCIA</h3>
-        <h1>
-          JM & Asociados.
-          <br /> Estudio juridico.
-        </h1>
-        <p>
-          Responsabilidad y eficacia, orientada a la resolución de conflictos en
-          el menor tiempo posible
-        </p>
-        <button>Contacto</button>
-      </div>
-      <div className="container second">
-        <Hero />
-        <div className="years">
+const IndexPage = () => {
+  const contactMeAnimationRef = useRef(null)
+  return (
+    <main id="home">
+      <Section className={"hero"}>
+        <div className="container first">
+          <h3>SERVICIO LEGAL DE EXCELENCIA</h3>
+          <h1>
+            JM & Asociados.
+            <br /> Estudio juridico.
+          </h1>
           <p>
-            <span>25</span> <br />
-            Años de experiencia en el campo
+            Responsabilidad y eficacia, orientada a la resolución de conflictos
+            en el menor tiempo posible
           </p>
+          <button>Contacto</button>
         </div>
-      </div>
-    </Section>
-    <Section className={"about"}>
-      <h2>
-        Porque somos tu
-        <br /> mejor eleccion
-      </h2>
-      <p>
-        Nuestro estudio se compone de un equipo de cuatro profesionales
-        altamente especializados en las áreas laboral y penal. Con una sólida
-        trayectoria y valores fundamentales centrados en la ética y la
-        transparencia, nos comprometemos a brindar a nuestros clientes una
-        representación legal excepcional. Nuestro enfoque personalizado,
-        combinado con experiencia probada, nos distingue en la resolución
-        exitosa de casos y la defensa efectiva de los derechos de nuestros
-        clientes.
-      </p>
-    </Section>
-    <Section className={"achievements"}>
-      <Counter value={300} text={"Casos ganados"} duration={4} />
-      <Counter value={400} text={"Cargos desestimados"} duration={5} />
-      <Counter value={1000} text={"Clientes satisfechos"} duration={6} />
-    </Section>
-    <Section className={"services"}>
-      <h2>Areas de practica</h2>
-      {Object.keys(services).map(key => (
-        <div className="container" key={key}>
-          <h3>{key}</h3>
-          <ul>
-            {services[key].map(value => (
-              <li key={value}>{value}</li>
-            ))}
-          </ul>
+        <div className="container second">
+          <Hero />
+          <div className="years">
+            <p>
+              <span>25</span> <br />
+              Años de experiencia en el campo
+            </p>
+          </div>
         </div>
-      ))}
-    </Section>
-    <Section className={"team"}>
-      <h2>Nuestro Equipo</h2>
-      <ul>
-        {members.map(member => (
-          <li>
-            {member.image}
-            <div className="links">
-              {member.linkedin && (
-                <a href={member.linkedin}>
-                  <img src={linkedin} />
-                </a>
-              )}
-              {member.facebook && (
-                <a href={member.facebook}>
-                  <img src={facebook} />
-                </a>
-              )}
-              {member.twitter && (
-                <a href={member.twitter}>
-                  <img src={twitter} />
-                </a>
-              )}
-              {member.instagram && (
-                <a href={member.instagram}>
-                  <img src={instagram} />
-                </a>
-              )}
-            </div>
-          </li>
+      </Section>
+      <Section className={"about"}>
+        <h2>
+          Porque somos tu
+          <br /> mejor eleccion
+        </h2>
+        <p>
+          Nuestro estudio se compone de un equipo de cuatro profesionales
+          altamente especializados en las áreas laboral y penal. Con una sólida
+          trayectoria y valores fundamentales centrados en la ética y la
+          transparencia, nos comprometemos a brindar a nuestros clientes una
+          representación legal excepcional. Nuestro enfoque personalizado,
+          combinado con experiencia probada, nos distingue en la resolución
+          exitosa de casos y la defensa efectiva de los derechos de nuestros
+          clientes.
+        </p>
+      </Section>
+      <Section className={"achievements"}>
+        <Counter value={300} text={"Casos ganados"} duration={4} />
+        <Counter value={400} text={"Cargos desestimados"} duration={5} />
+        <Counter value={1000} text={"Clientes satisfechos"} duration={6} />
+      </Section>
+      <Section className={"services"}>
+        <h2>Areas de practica</h2>
+        {Object.keys(services).map(key => (
+          <div className="container" key={key}>
+            <h3>{key}</h3>
+            <ul>
+              {services[key].map(value => (
+                <li key={value}>{value}</li>
+              ))}
+            </ul>
+          </div>
         ))}
-      </ul>
-    </Section>
-    <Section className={"email"}>
-      <div className="container">
-        <h2>Contactanos</h2>
-      </div>
-      <form action="">
-        <legend>Lorem ipsum dolor sit amet.</legend>
-        <input type="email" name="email" id="" placeholder="Email" />
-        <input type="text" name="name" placeholder="Nombre" />
-        <textarea
-          name="message"
-          id=""
-          cols="30"
-          rows="10"
-          placeholder="Escribe tu mensaje"
-        ></textarea>
-        <button>Enviar</button>
-      </form>
-    </Section>
-  </main>
-)
+      </Section>
+      <Section className={"team"}>
+        <h2>Nuestro Equipo</h2>
+        <ul>
+          {members.map(member => (
+            <li>
+              {member.image}
+              <div className="links">
+                {member.linkedin && (
+                  <a href={member.linkedin}>
+                    <img src={linkedin} />
+                  </a>
+                )}
+                {member.facebook && (
+                  <a href={member.facebook}>
+                    <img src={facebook} />
+                  </a>
+                )}
+                {member.twitter && (
+                  <a href={member.twitter}>
+                    <img src={twitter} />
+                  </a>
+                )}
+                {member.instagram && (
+                  <a href={member.instagram}>
+                    <img src={instagram} />
+                  </a>
+                )}
+              </div>
+            </li>
+          ))}
+        </ul>
+      </Section>
+      <Section className={"email"}>
+        <div className="container">
+          <h2>Contactanos</h2>
+          <Lottie
+            className="animation"
+            lottieRef={contactMeAnimationRef}
+            animationData={animationData}
+            autoplay={true}
+            loop={true}
+          />
+        </div>
+        <form action="">
+          <legend>Lorem ipsum dolor sit amet.</legend>
+          <input type="email" name="email" id="" placeholder="Email" />
+          <input type="text" name="name" placeholder="Nombre" />
+          <textarea
+            name="message"
+            id=""
+            cols="30"
+            rows="10"
+            placeholder="Escribe tu mensaje"
+          ></textarea>
+          <button>Enviar</button>
+        </form>
+      </Section>
+    </main>
+  )
+}
 
 function Counter({ value, duration, text }) {
   const [startCounters, setStartCounters] = useState(false)

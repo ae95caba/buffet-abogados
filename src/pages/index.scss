@@ -237,6 +237,18 @@ section.email {
 
     flex-wrap: wrap;
     gap: 3rem;
+    .container {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      h2 {
+        font-weight: 400;
+        text-align: center;
+      }
+      .animation {
+        width: 12rem;
+      }
+    }
     form {
       display: flex;
       flex-direction: column;
