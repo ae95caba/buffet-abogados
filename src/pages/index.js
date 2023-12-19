@@ -19,6 +19,9 @@ import Member3 from "../images/GatsbyImages/Member3"
 import Member4 from "../images/GatsbyImages/Member4"
 import Lottie, { LottieRefCurrentProps } from "lottie-react"
 import animationData from "../animations/contact-me.json"
+import trophy from "../images/trophy.svg"
+import judge from "../images/judge.svg"
+import users from "../images/users.svg"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
@@ -104,9 +107,24 @@ const IndexPage = () => {
         </div>
       </Section>
       <Section className={"achievements"}>
-        <Counter value={300} text={"Casos ganados"} duration={4} />
-        <Counter value={400} text={"Cargos desestimados"} duration={5} />
-        <Counter value={1000} text={"Clientes satisfechos"} duration={6} />
+        <Counter
+          value={300}
+          text={"Casos ganados"}
+          duration={4}
+          icon={trophy}
+        />
+        <Counter
+          value={400}
+          text={"Cargos desestimados"}
+          duration={5}
+          icon={judge}
+        />
+        <Counter
+          value={1000}
+          text={"Clientes satisfechos"}
+          duration={6}
+          icon={users}
+        />
       </Section>
       <Section className={"about"}>
         <h2>
@@ -204,10 +222,11 @@ const IndexPage = () => {
   )
 }
 
-function Counter({ value, duration, text }) {
+function Counter({ value, duration, text, icon }) {
   const [startCounters, setStartCounters] = useState(false)
   return (
     <ScrollTrigger onEnter={() => setStartCounters(true)} className="container">
+      <img src={icon} alt="" />
       <p>
         {startCounters ? (
           <CountUp end={value} duration={duration} start={0} delay={0.5} />
