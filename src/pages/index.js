@@ -127,10 +127,10 @@ const IndexPage = () => {
         />
       </Section>
       <Section className={"about"}>
-        <h2>
-          Porque somos tu
-          <br /> mejor eleccion
-        </h2>
+        <div className="container">
+          <h3>Quienes somos:</h3>
+          <h2>Tu mejor eleccion</h2>
+        </div>
         <p>
           Nuestro estudio se compone de un equipo de cuatro profesionales
           altamente especializados en las áreas laboral y penal. Con una sólida
