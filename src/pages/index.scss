@@ -11,6 +11,23 @@ $cool-shadow: 0 0 5px rgba(0, 0, 0, 0.502);
   letter-spacing: 1px;
 }
 @mixin underlinedTitle() {
+  letter-spacing: 1px;
+  word-spacing: 4px;
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 0px;
+
+    background-color: $accent-color;
+    height: 3px;
+    border-radius: 1rem;
+    width: 66.6%;
+  }
+}
+
+body {
+  color: $dark-background;
 }
 main > section:nth-child(odd) {
   background-color: $light-background;
@@ -58,8 +75,7 @@ section.hero {
       font-size: 1.8rem;
     }
   }
-  .container {
-  }
+
   .container.second {
     position: relative;
     .years {
@@ -145,15 +161,7 @@ section.services {
           left: 0rem;
           text-transform: capitalize;
           width: fit-content;
-          &::after {
-            content: "";
-            position: absolute;
-            bottom: -5px;
-            left: 0px;
-            width: 100%;
-            background-color: $accent-color;
-            height: 3px;
-          }
+          @include underlinedTitle();
         }
       }
       li {
