@@ -112,19 +112,19 @@ const IndexPage = () => {
           value={300}
           text={"Casos ganados"}
           duration={4}
-          icon={trophy}
+          icon={<ReactSVG src={trophy} />}
         />
         <Counter
           value={400}
           text={"Cargos desestimados"}
           duration={5}
-          icon={judge}
+          icon={<ReactSVG src={judge} />}
         />
         <Counter
           value={1000}
           text={"Clientes satisfechos"}
           duration={6}
-          icon={users}
+          icon={<ReactSVG src={users} />}
         />
       </Section>
       <Section className={"about"}>
@@ -230,7 +230,7 @@ function Counter({ value, duration, text, icon }) {
   const [startCounters, setStartCounters] = useState(false)
   return (
     <ScrollTrigger onEnter={() => setStartCounters(true)} className="container">
-      <img src={icon} alt="" />
+      {icon}
       <p>
         {startCounters ? (
           <CountUp end={value} duration={duration} start={0} delay={0.5} />

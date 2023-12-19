@@ -239,8 +239,10 @@ section.achievements {
       gap: 1rem;
       align-items: center;
 
-      img {
+      svg {
+        height: auto;
         width: 5rem;
+        fill: $accent-color;
       }
 
       p {
