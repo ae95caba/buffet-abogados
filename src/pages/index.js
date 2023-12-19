@@ -28,33 +28,29 @@ const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=de
 
 let members = [
   {
-    name: "Pablito Lopez",
-    position: "Abogado lider",
+    name: "Pablo Lopez",
+    position: "Abogado líder",
     image: <Member1 />,
     linkedin: "linkedin/another-person",
-    facebook: "asdfasdf",
-    twitter: "fasfa",
-    instagram: "asf",
+    links: { facebook: "asdfasdf", twitter: "fasfa", instagram: "asf" },
   },
   {
     name: "Franco Garcia",
     position: "Abogado asistente",
     image: <Member2 />,
-    linkedin: "linkedin/another-person",
+    links: { linkedin: "linkedin/another-person" },
   },
   {
     name: "Fernanda Perez",
     position: "Secretaria",
     image: <Member3 />,
-    linkedin: "linkedin/another-person",
-    facebook: "fasdfa",
+    links: { linkedin: "linkedin/another-person", facebook: "fasdfa" },
   },
   {
     name: "Juan Russo",
     position: "Abogado asistente",
     image: <Member4 />,
-    linkedin: "linkedin/another-person",
-    twitter: "fasdfa",
+    links: { linkedin: "linkedin/another-person", twitter: "fasdfa" },
   },
 ]
 
@@ -146,48 +142,54 @@ const IndexPage = () => {
 
       <Section className={"services"}>
         <h2>Areas de practica</h2>
-        {Object.keys(services).map(key => (
-          <div className="container" key={key}>
-            <h3>{key}</h3>
-            <ul>
-              {services[key].map(value => (
-                <li key={value}>
+        {Object.keys(services).map(category => (
+          <ul key={category}>
+            {services[category].map((service, index) => (
+              <>
+                <li key={service}>
+                  {index == 0 && <h3>{category}</h3>}
                   <ReactSVG src={checkmark} />
-                  {value}
+                  {service}
                 </li>
-              ))}
-            </ul>
-          </div>
+              </>
+            ))}
+          </ul>
         ))}
       </Section>
       <Section className={"team"}>
         <h2>Nuestro Equipo</h2>
         <ul>
           {members.map(member => (
-            <li>
-              {member.image}
-              <div className="links">
-                {member.linkedin && (
-                  <a href={member.linkedin}>
-                    <img src={linkedin} />
-                  </a>
-                )}
-                {member.facebook && (
-                  <a href={member.facebook}>
-                    <img src={facebook} />
-                  </a>
-                )}
-                {member.twitter && (
-                  <a href={member.twitter}>
-                    <img src={twitter} />
-                  </a>
-                )}
-                {member.instagram && (
-                  <a href={member.instagram}>
-                    <img src={instagram} />
-                  </a>
+            <li className="member" key="member.name">
+              <div className="container">
+                {member.image}
+                {member.links && Object.keys(member.links).length > 0 && (
+                  <div className="links">
+                    {member.links.linkedin && (
+                      <a href={member.links.linkedin}>
+                        <img src={linkedin} />
+                      </a>
+                    )}
+                    {member.links.facebook && (
+                      <a href={member.links.facebook}>
+                        <img src={facebook} />
+                      </a>
+                    )}
+                    {member.links.twitter && (
+                      <a href={member.links.twitter}>
+                        <img src={twitter} />
+                      </a>
+                    )}
+                    {member.links.instagram && (
+                      <a href={member.links.instagram}>
+                        <img src={instagram} />
+                      </a>
+                    )}
+                  </div>
                 )}
               </div>
+              <p>{member.name}</p>
+              <p>{member.position}</p>
             </li>
           ))}
         </ul>
