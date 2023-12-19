@@ -22,7 +22,8 @@ import animationData from "../animations/contact-me.json"
 import trophy from "../images/trophy.svg"
 import judge from "../images/judge.svg"
 import users from "../images/users.svg"
-
+import checkmark from "../images/checkmark.svg"
+import { ReactSVG } from "react-svg"
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 let members = [
@@ -128,8 +129,8 @@ const IndexPage = () => {
       </Section>
       <Section className={"about"}>
         <div className="container">
-          <h3>Quienes somos:</h3>
-          <h2>Tu mejor eleccion</h2>
+          <h3>Nosotros</h3>
+          <h2>Somos tu mejor elección</h2>
         </div>
         <p>
           Nuestro estudio se compone de un equipo de cuatro profesionales
@@ -150,7 +151,10 @@ const IndexPage = () => {
             <h3>{key}</h3>
             <ul>
               {services[key].map(value => (
-                <li key={value}>{value}</li>
+                <li key={value}>
+                  <ReactSVG src={checkmark} />
+                  {value}
+                </li>
               ))}
             </ul>
           </div>
