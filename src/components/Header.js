@@ -1,9 +1,9 @@
 import React from "react"
-
+import { ReactSVG } from "react-svg"
 import { Link } from "gatsby"
 import { useContext, useRef } from "react"
 
-import Logo from "../images/GatsbyImages/Logo"
+import balance from "../images/balance.svg"
 import animationData from "../animations/hamburger-menu.json"
 import Lottie from "lottie-react"
 
@@ -14,8 +14,12 @@ export default function Header() {
   return (
     <header>
       <div className="content">
-        <Link to="/" activeClassName="active">
-          <Logo />
+        <Link to="/" /* activeClassName="active" */ className="logo">
+          <ReactSVG src={balance} />
+          <h1>
+            JM & Asociados
+            <br /> <span>Estudio juridico</span>
+          </h1>
         </Link>
         <div className="container">
           <nav>
@@ -63,7 +67,7 @@ function Tabs() {
   return (
     <>
       {tabsObj.map(tab => (
-        <Link to={`/${tab.toLowerCase()}`} activeClassName="active">
+        <Link to={`/${tab.toLowerCase()}`} /* activeClassName="active" */>
           {tab}
         </Link>
       ))}
