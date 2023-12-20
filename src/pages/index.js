@@ -1,11 +1,12 @@
 import * as React from "react"
-import { useState, useRef } from "react"
+import { useState, useRef, useEffect } from "react"
 import { Link } from "gatsby"
 import { StaticImage } from "gatsby-plugin-image"
 import "./index.scss"
 import linkedin from "../images/linkedin.svg"
 import CountUp from "react-countup"
-import ScrollTrigger from "react-scroll-trigger"
+import { useInView } from "react-intersection-observer"
+
 import twitter from "../images/twitter.svg"
 import instagram from "../images/instagram.svg"
 import facebook from "../images/facebook.svg"
@@ -78,6 +79,7 @@ let services = {
 
 const IndexPage = () => {
   const contactMeAnimationRef = useRef(null)
+
   return (
     <main id="home">
       <Section className={"hero"}>
@@ -228,12 +230,22 @@ const IndexPage = () => {
 }
 
 function Counter({ value, duration, text, icon }) {
-  const [startCounters, setStartCounters] = useState(false)
+  const { ref, inView, entry } = useInView({
+    /* Optional options */
+    threshold: 1,
+    triggerOnce: true,
+  })
+
+  useEffect(() => {
+    if (inView) {
+      console.log("in view")
+    }
+  }, [inView])
   return (
-    <ScrollTrigger onEnter={() => setStartCounters(true)} className="container">
+    <div className="container" ref={ref}>
       {icon}
       <p>
-        {startCounters ? (
+        {inView ? (
           <CountUp end={value} duration={duration} start={0} delay={0.5} />
         ) : (
           <span>0</span>
@@ -241,7 +253,7 @@ function Counter({ value, duration, text, icon }) {
         <br />
         {text}
       </p>
-    </ScrollTrigger>
+    </div>
   )
 }
 
