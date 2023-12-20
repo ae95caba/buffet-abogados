@@ -25,6 +25,10 @@ import judge from "../images/judge.svg"
 import users from "../images/users.svg"
 import checkmark from "../images/checkmark.svg"
 import { ReactSVG } from "react-svg"
+import user from "../images/user.svg"
+import email from "../images/email.svg"
+import feather from "../images/feather.svg"
+
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
 let members = [
@@ -209,19 +213,41 @@ const IndexPage = () => {
         </div>
         <form action="https://formsubmit.co/ae95caba@gmail.com" method="POST">
           <legend>Aclararemos todas tus dudas.</legend>
-          <input type="email" name="email" id="" placeholder="Email" required />
-          <input type="text" name="name" placeholder="Nombre" required />
+
+          <label htmlFor="email">
+            <input
+              type="email"
+              name="email"
+              id="email"
+              placeholder="Email"
+              required
+            />
+            <ReactSVG src={email} />
+          </label>
+          <label htmlFor="name">
+            <input
+              type="text"
+              name="name"
+              id="name"
+              placeholder="Nombre"
+              required
+            />
+            <ReactSVG src={user} />
+          </label>
           <input
             type="hidden"
             name="_next"
             value="http://localhost:8000/"
           ></input>
-          <textarea
-            name="message"
-            required
-            id=""
-            placeholder="Escribe tu mensaje"
-          ></textarea>
+          <label htmlFor="message">
+            <textarea
+              name="message"
+              required
+              id="message"
+              placeholder="Escribe tu mensaje"
+            ></textarea>
+            <ReactSVG src={feather} />
+          </label>
           <button>Enviar</button>
         </form>
       </Section>

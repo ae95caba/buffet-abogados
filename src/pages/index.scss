@@ -348,23 +348,51 @@ section.email {
       legend {
         margin-bottom: 1rem;
       }
-      textarea {
-        text-transform: inherit;
-        padding: 0.5rem;
-        height: 10rem;
-        resize: none;
-      }
-      input {
-        padding: 0.5rem;
 
-        text-transform: inherit;
+      label[for="message"] {
+        svg {
+          top: 0.5rem;
+          left: 0.35rem;
+        }
       }
-      textarea,
-      input {
-        background-color: white;
-        text-transform: uppercase;
-        &:focus {
-          outline: 4px solid $accent-color;
+
+      label[for="email"],
+      label[for="name"] {
+        svg {
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 0.8rem;
+        }
+      }
+      label {
+        position: relative;
+
+        svg {
+          position: absolute;
+
+          width: 1rem;
+          height: auto;
+          path,
+          ellipse,
+          circle {
+            fill: $accent-color;
+          }
+        }
+
+        textarea {
+          height: 10rem;
+          resize: none;
+        }
+        textarea,
+        input {
+          background-color: white;
+          text-transform: uppercase;
+          padding: 0.5rem;
+          padding-left: 2rem;
+          width: 100%;
+          &:focus {
+            outline: 4px solid $accent-color;
+          }
         }
       }
     }
