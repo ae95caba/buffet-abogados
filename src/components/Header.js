@@ -7,7 +7,12 @@ import balance from "../images/balance.svg"
 import animationData from "../animations/hamburger-menu.json"
 import Lottie from "lottie-react"
 
-const tabsObj = ["Catalogo", "Nosotros", "Galeria", "Testimonios"]
+const tabsObj = [
+  "Areas de practica",
+  "Nosotros",
+  "Nuestro equipo",
+  "Contactanos",
+]
 
 export default function Header() {
   const hambugerAnimationRef = useRef(null)

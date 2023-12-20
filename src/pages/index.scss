@@ -62,7 +62,7 @@ section.hero {
     justify-content: center;
   }
   .container.first {
-    max-width: 24rem;
+    max-width: 20rem;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -71,9 +71,9 @@ section.hero {
     h3 {
       @include highlightedTitle();
     }
-    h1 {
+    h2 {
       font-weight: 500;
-      font-size: 1.8rem;
+      font-size: 1.5rem;
     }
   }
 

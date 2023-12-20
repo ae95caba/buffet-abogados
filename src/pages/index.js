@@ -89,15 +89,15 @@ const IndexPage = () => {
       <Section className={"hero"}>
         <div className="container first">
           <h3>SERVICIO LEGAL DE EXCELENCIA</h3>
-          <h1>
-            JM & Asociados.
-            <br /> Estudio juridico.
-          </h1>
+          <h2>
+            Deja que nuestra experiencia
+            <span> sea tu guía</span>
+          </h2>
           <p>
             Responsabilidad y eficacia, orientada a la resolución de conflictos
             en el menor tiempo posible.
           </p>
-          <button>Contacto</button>
+          <button>Contactanos</button>
         </div>
         <div className="container second">
           <Hero />
