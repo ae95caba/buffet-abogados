@@ -1,8 +1,8 @@
 import React from "react"
 
-export default function Section({ className, children }) {
+export default function Section({ className, children, id }) {
   return (
-    <section className={className}>
+    <section className={className} id={id}>
       <div className="content">{children}</div>
     </section>
   )

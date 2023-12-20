@@ -71,11 +71,16 @@ function Sidebar() {
 function Tabs() {
   return (
     <>
-      {tabsObj.map(tab => (
-        <Link to={`/${tab.toLowerCase()}`} /* activeClassName="active" */>
-          {tab}
-        </Link>
-      ))}
+      <Link to={`/#nosotros`} /* activeClassName="active" */>Nosotros</Link>
+      <Link to={`/#areas-de-practica`} /* activeClassName="active" */>
+        Areas de practica
+      </Link>
+      <Link to={`/#nuestro-equipo`} /* activeClassName="active" */>
+        Nuestro Equipo
+      </Link>
+      <Link to={`/#contactanos`} /* activeClassName="active" */>
+        Contáctanos
+      </Link>
     </>
   )
 }

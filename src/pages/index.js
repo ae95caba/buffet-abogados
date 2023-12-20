@@ -109,7 +109,7 @@ const IndexPage = () => {
           </div>
         </div>
       </Section>
-      <Section className={"achievements"}>
+      <Section className="achievements">
         <Counter
           value={300}
           text={"Casos ganados"}
@@ -129,7 +129,7 @@ const IndexPage = () => {
           icon={<ReactSVG src={users} />}
         />
       </Section>
-      <Section className={"about"}>
+      <Section className={"about"} id="nosotros">
         <div className="container">
           <h3>Nosotros</h3>
           <h2>Somos tu mejor elección</h2>
@@ -146,7 +146,7 @@ const IndexPage = () => {
         </p>
       </Section>
 
-      <Section className={"services"}>
+      <Section className={"services"} id={"areas-de-practica"}>
         <h2>Areas de practica</h2>
         {Object.keys(services).map(category => (
           <ul key={category}>
@@ -162,7 +162,7 @@ const IndexPage = () => {
           </ul>
         ))}
       </Section>
-      <Section className={"team"}>
+      <Section className={"team"} id="nuestro-equipo">
         <h2>Nuestro Equipo</h2>
         <ul>
           {members.map(member => (
@@ -200,7 +200,7 @@ const IndexPage = () => {
           ))}
         </ul>
       </Section>
-      <Section className={"email"}>
+      <Section className={"email"} id="contactanos">
         <div className="container">
           <h2>Contactanos</h2>
           <Lottie
