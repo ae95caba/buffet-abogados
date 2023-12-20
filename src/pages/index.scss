@@ -95,6 +95,11 @@ section.hero {
         hyphens: auto;
       }
     }
+    .placeholder {
+      max-height: 20rem;
+      aspect-ratio: 1/1;
+      border: solid black 1px;
+    }
     .gatsby-image-wrapper {
       max-height: 20rem;
       aspect-ratio: 1/1;
@@ -201,6 +206,7 @@ section.team {
       gap: 2rem;
       flex-wrap: wrap;
       justify-content: center;
+      overflow-x: hidden;
 
       li.member {
         .container {
@@ -224,7 +230,8 @@ section.team {
             }
           }
           .gatsby-image-wrapper {
-            height: 16rem;
+            max-height: 16rem;
+            height: 100%;
             aspect-ratio: 1/1;
             border-radius: 1px;
           }
@@ -305,31 +312,56 @@ section.email {
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
+
       h2 {
         font-weight: 400;
         text-align: center;
       }
       .animation {
-        width: 12rem;
+        width: 8rem;
+        margin-top: -2rem;
+        svg {
+          path[fill="rgb(216,27,96)"] {
+            fill: rgb(233, 233, 233); /* Change the fill color for this path */
+          }
+          path[fill="rgb(236,64,122)"] {
+            fill: rgb(222, 222, 222);
+          }
+          path[fill="rgb(170,19,86)"] {
+            fill: rgb(211, 211, 211);
+          }
+          path[fill="rgb(238,238,238)"] {
+            fill: rgb(42, 41, 41);
+          }
+          path[fill="rgb(6,42,123)"] {
+            fill: $accent-color;
+          }
+        }
       }
     }
     form {
       display: flex;
       flex-direction: column;
-      text-transform: uppercase;
+
       gap: 1rem;
       legend {
         margin-bottom: 1rem;
       }
       textarea {
-        border: solid black 1px;
         text-transform: inherit;
         padding: 0.5rem;
+        height: 10rem;
+        resize: none;
       }
       input {
         padding: 0.5rem;
-        border: solid black 1px;
+
         text-transform: inherit;
+      }
+      textarea,
+      input {
+        background-color: white;
+        text-transform: uppercase;
       }
     }
   }

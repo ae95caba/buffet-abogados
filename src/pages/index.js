@@ -206,7 +206,7 @@ const IndexPage = () => {
           />
         </div>
         <form action="https://formsubmit.co/ae95caba@gmail.com" method="POST">
-          <legend>Lorem ipsum dolor sit amet.</legend>
+          <legend>Aclararemos todas tus dudas.</legend>
           <input type="email" name="email" id="" placeholder="Email" required />
           <input type="text" name="name" placeholder="Nombre" required />
           <input
@@ -216,9 +216,8 @@ const IndexPage = () => {
           ></input>
           <textarea
             name="message"
+            required
             id=""
-            cols="30"
-            rows="10"
             placeholder="Escribe tu mensaje"
           ></textarea>
           <button>Enviar</button>
