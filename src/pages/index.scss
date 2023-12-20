@@ -30,30 +30,29 @@ body {
   color: $dark-background;
 }
 
-main > section:nth-child(odd) {
+main > section:nth-child(odd):not(.call-to-action) {
   background-color: $light-background;
 }
 
-main > section:nth-child(even) {
+main > section:nth-child(even):not(.call-to-action) {
   background-color: $dark-background;
   color: white;
 }
 
 button {
-  padding: 0.5rem 1rem;
+  padding: 0.8rem 1.8rem;
   font-size: 1.2;
   text-transform: uppercase;
-  font-weight: 700;
+  font-weight: 500;
   color: white;
+  border-radius: 3px;
   background-color: $accent-color;
+  letter-spacing: 2px;
+  word-spacing: 5px;
 }
 
 section.hero {
   .content {
-    //
-    height: auto;
-    border: none;
-    //
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -110,10 +109,6 @@ section.hero {
 
 section.about {
   .content {
-    //
-    height: auto;
-    border: none;
-    //
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -142,10 +137,6 @@ section.about {
 
 section.services {
   .content {
-    //
-    height: auto;
-    border: none;
-    //
     display: flex;
     gap: 8rem;
     flex-direction: column;
@@ -194,10 +185,6 @@ section.services {
 
 section.team {
   .content {
-    //
-    height: auto;
-    border: none;
-    //
     h2 {
       text-align: center;
       margin-bottom: 4rem;
@@ -252,10 +239,6 @@ section.team {
 
 section.achievements {
   .content {
-    //
-    height: auto;
-    border: none;
-    //
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -300,19 +283,15 @@ section.achievements {
 
 section.email {
   .content {
-    //
-    height: auto;
-    border: none;
-    //
     display: flex;
     justify-content: space-evenly;
-
+    align-items: center;
     flex-wrap: wrap;
     gap: 3rem;
     .container {
       display: flex;
       flex-direction: column;
-      justify-content: space-evenly;
+      gap: 1rem;
 
       h2 {
         font-weight: 400;
@@ -395,6 +374,31 @@ section.email {
           }
         }
       }
+    }
+  }
+}
+
+section.call-to-action {
+  background-color: $accent-color;
+  color: white;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+  .content {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 2rem;
+    p {
+      text-align: center;
+      font-size: 1.2rem;
+      text-transform: capitalize;
+      font-weight: 600;
+      letter-spacing: 1px;
+      word-spacing: 4px;
+    }
+    button {
+      background-color: black;
     }
   }
 }

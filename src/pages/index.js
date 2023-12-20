@@ -251,6 +251,10 @@ const IndexPage = () => {
           <button>Enviar</button>
         </form>
       </Section>
+      <Section className="call-to-action">
+        <p>Contactanos ahora! Haz una consulta gratuita para tu caso.</p>
+        <button>Reserva una cita</button>
+      </Section>
     </main>
   )
 }
