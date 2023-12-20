@@ -29,6 +29,7 @@ $cool-shadow: 0 0 5px rgba(0, 0, 0, 0.502);
 body {
   color: $dark-background;
 }
+
 main > section:nth-child(odd) {
   background-color: $light-background;
 }
@@ -362,6 +363,9 @@ section.email {
       input {
         background-color: white;
         text-transform: uppercase;
+        &:focus {
+          outline: 4px solid $accent-color;
+        }
       }
     }
   }
