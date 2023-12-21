@@ -8,43 +8,56 @@ import twitter from "../images/twitter.svg"
 import instagram from "../images/instagram.svg"
 import facebook from "../images/facebook.svg"
 import whatsapp from "../images/whatsapp.svg"
-
+import Logo from "./Logo"
+import Tabs from "./Tabs"
 const links = {
-  instagram: { url: "asdf", icon: instagram },
-  facebook: { url: "fasf", icon: facebook },
-  linkedin: { url: "fasdf", icon: linkedin },
-  twitter: { url: "fasdf", icon: twitter },
+  instagram: { url: "https://www.instagram.com/", icon: instagram },
+  facebook: { url: "https://www.facebook.com/", icon: facebook },
+  linkedin: { url: "https://www.linkedin.com/", icon: linkedin },
+  twitter: { url: "https://www.twitter.com/", icon: twitter },
 }
 
-const container = {
+const contact = {
   whatsapp: { icon: whatsapp, string: "+5491265800", url: "fasdfas" },
-  phone: { icon: phone, string: "+54911291855", url: "asdf" },
+  phone: { icon: phone, string: "+54911291855", url: "tel:+54911291855" },
   location: {
     icon: pin,
     string: "Gallo 2145, Ciudad de Buenos Aires, Argentina",
-    url: "www.maps.google.com",
+    url: "https://www.google.com/maps",
   },
-  email: { icon: email, string: "jmyasociados@gmail.com", url: "fasdf" },
+  email: {
+    icon: email,
+    string: "jmyasociados@gmail.com",
+    url: "mailto:jmyasociados@gmail.com",
+  },
 }
 
 export default function Footer() {
   return (
     <footer>
       <div className="content">
-        {Object.keys(container).length > 0 && (
-          <div className="container">
-            {Object.keys(container).map(plataform => (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={container[plataform].url}
-              >
-                <ReactSVG src={container[plataform].icon} />
-                {container[plataform].string}
-              </a>
-            ))}
+        <div className="container">
+          {Object.keys(contact).length > 0 && (
+            <div className="contact">
+              {Object.keys(contact).map(plataform => (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={contact[plataform].url}
+                >
+                  <ReactSVG src={contact[plataform].icon} />
+                  {contact[plataform].string}
+                </a>
+              ))}
+            </div>
+          )}
+          <div className="extra">
+            <Logo elementType={"p"} />
+            <nav>
+              <Tabs />
+            </nav>
           </div>
-        )}
+        </div>
         {Object.keys(links).length > 0 && (
           <div className="icons">
             {Object.keys(links).map(plataform => (
@@ -59,12 +72,10 @@ export default function Footer() {
           </div>
         )}
 
-        <div className="copyright">
-          <p>
-            Copyright © 2023 | JM & Asociados por
-            <a href="https://andreespinozadev.netlify.app/"> Andre Espinoza</a>
-          </p>
-        </div>
+        <p className="copyright">
+          Copyright © 2023 | JM & Asociados por
+          <a href="https://andreespinozadev.netlify.app/"> Andre Espinoza</a>
+        </p>
       </div>
     </footer>
   )

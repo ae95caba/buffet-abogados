@@ -2,30 +2,19 @@ import React from "react"
 import { ReactSVG } from "react-svg"
 import { Link } from "gatsby"
 import { useContext, useRef } from "react"
-
+import Logo from "./Logo"
 import balance from "../images/balance.svg"
 import animationData from "../animations/hamburger-menu.json"
 import Lottie from "lottie-react"
-
-const tabsObj = [
-  "Areas de practica",
-  "Nosotros",
-  "Nuestro equipo",
-  "Contactanos",
-]
+import Tabs from "./Tabs"
 
 export default function Header() {
   const hambugerAnimationRef = useRef(null)
   return (
     <header>
       <div className="content">
-        <Link to="/" /* activeClassName="active" */ className="logo">
-          <ReactSVG src={balance} />
-          <h1>
-            JM & Asociados
-            <br /> <span>Estudio juridico</span>
-          </h1>
-        </Link>
+        <Logo elementType={"h1"} />
+
         <div className="container">
           <nav>
             <Tabs />
@@ -65,22 +54,5 @@ function Sidebar() {
     <aside className="sidebar">
       <Tabs />
     </aside>
-  )
-}
-
-function Tabs() {
-  return (
-    <>
-      <Link to={`/#nosotros`} /* activeClassName="active" */>Nosotros</Link>
-      <Link to={`/#areas-de-practica`} /* activeClassName="active" */>
-        Areas de practica
-      </Link>
-      <Link to={`/#nuestro-equipo`} /* activeClassName="active" */>
-        Nuestro Equipo
-      </Link>
-      <Link to={`/#contactanos`} /* activeClassName="active" */>
-        Contáctanos
-      </Link>
-    </>
   )
 }
