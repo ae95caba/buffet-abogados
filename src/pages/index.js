@@ -97,7 +97,7 @@ const IndexPage = () => {
             Responsabilidad y eficacia, orientada a la resolución de conflictos
             en el menor tiempo posible.
           </p>
-          <button>Contactanos</button>
+          <button>Reservar una cita</button>
         </div>
         <div className="container second">
           <Hero />

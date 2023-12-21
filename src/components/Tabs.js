@@ -13,9 +13,6 @@ export default function Tabs() {
       <Link to={`/#contactanos`} /* activeClassName="active" */>
         Contáctanos
       </Link>
-      <Link to={`/#contactanos`} /* activeClassName="active" */>
-        Contáctanos
-      </Link>
     </>
   )
 }
