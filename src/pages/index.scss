@@ -3,6 +3,7 @@ $light-background: #f5f5f5;
 $dark-background: #454a53;
 $medium-background: #4e535c;
 $cool-shadow: 0 0 5px rgba(0, 0, 0, 0.502);
+$header-height: 68px;
 @mixin highlightedTitle() {
   font-size: 0.8rem;
   text-transform: uppercase;
@@ -53,9 +54,13 @@ button {
 }
 
 section.hero {
+  min-height: calc(100svh - $header-height);
+  min-height: calc(100vh - $header-height);
+  display: flex;
   .content {
     display: flex;
     flex-wrap: wrap;
+    width: 100%;
     align-items: center;
     column-gap: 1rem;
     row-gap: 3rem;
