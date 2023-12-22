@@ -57,6 +57,8 @@ section.hero {
   min-height: calc(100svh - $header-height);
   min-height: calc(100vh - $header-height);
   display: flex;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
   .content {
     display: flex;
     flex-wrap: wrap;
@@ -443,6 +445,16 @@ section.call-to-action {
           left: auto;
           width: 100%;
         }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 793px) and (max-height: 720px) {
+  section.hero {
+    .content {
+      row-gap: 1rem;
+      .container.first {
       }
     }
   }
