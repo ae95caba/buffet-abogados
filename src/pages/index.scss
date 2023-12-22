@@ -57,9 +57,9 @@ section.hero {
     display: flex;
     flex-wrap: wrap;
     align-items: center;
-    column-gap: 6rem;
+    column-gap: 1rem;
     row-gap: 3rem;
-    justify-content: center;
+    justify-content: space-evenly;
   }
   .container.first {
     max-width: 20rem;
@@ -79,12 +79,14 @@ section.hero {
 
   .container.second {
     position: relative;
+    $leng: 3rem;
+    margin-left: $leng;
     .years {
       position: absolute;
       width: 9rem;
       box-shadow: $cool-shadow;
       top: 40%;
-      left: -10%;
+      left: -$leng;
       background-color: white;
       padding: 0.8rem;
       span {
@@ -417,6 +419,25 @@ section.call-to-action {
     .content {
       p {
         column-count: 1;
+      }
+    }
+  }
+}
+
+//793 is when flex-wrap triggers
+
+@media screen and (max-width: 793px) {
+  section.hero {
+    .content {
+      .container.second {
+        margin-left: 0px !important;
+        .years {
+          position: absolute;
+          bottom: 0px;
+          top: auto;
+          left: auto;
+          width: 100%;
+        }
       }
     }
   }
