@@ -54,8 +54,8 @@ button {
 }
 
 section.hero {
-  min-height: calc(100svh - $header-height);
   min-height: calc(100vh - $header-height);
+  min-height: calc(100svh - $header-height);
   display: flex;
   padding-top: 1rem;
   padding-bottom: 1rem;
