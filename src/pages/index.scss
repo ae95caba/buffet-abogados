@@ -1,8 +1,9 @@
-$accent-color: #d6b56e;
+$accent-color: rgb(214, 181, 110);
 $light-background: #f5f5f5;
 $dark-background: #454a53;
 $medium-background: #4e535c;
 $cool-shadow: 0 0 5px rgba(0, 0, 0, 0.502);
+$bold-shadow: 0 0 10px rgba(214, 181, 110, 0.902);
 $header-height: 68px;
 @mixin highlightedTitle() {
   font-size: 0.8rem;
@@ -59,7 +60,34 @@ section.hero {
   display: flex;
   padding-top: 1rem;
   padding-bottom: 1rem;
+  position: relative;
+  .background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-image: url("../images/hero-background.jpg");
+    background-size: cover;
+
+    background-repeat: no-repeat;
+    background-position: center;
+    z-index: 1;
+
+    /*   background-attachment: fixed; */
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.4);
+      backdrop-filter: blur(3px); /* apply the blur */
+      pointer-events: none; /* make the overlay click-through */
+    }
+  }
   .content {
+    position: relative;
+    z-index: 9;
     display: flex;
     flex-wrap: wrap;
     width: 100%;
@@ -82,6 +110,10 @@ section.hero {
       font-weight: 500;
       font-size: 1.5rem;
     }
+    h2,
+    p {
+      color: $light-background;
+    }
   }
 
   .container.second {
@@ -91,11 +123,12 @@ section.hero {
     .years {
       position: absolute;
       width: 9rem;
-      box-shadow: $cool-shadow;
+      box-shadow: $bold-shadow;
       top: 40%;
       left: -$leng;
       background-color: white;
       padding: 0.8rem;
+
       span {
         font-size: 2rem;
         font-weight: 900;
@@ -103,6 +136,7 @@ section.hero {
       p {
         font-size: 0.8rem;
         hyphens: auto;
+        font-weight: 500;
       }
     }
     .placeholder {
@@ -112,6 +146,8 @@ section.hero {
     }
     .gatsby-image-wrapper {
       max-height: 20rem;
+      border-radius: 2px;
+      box-shadow: $bold-shadow;
       aspect-ratio: 1/1;
     }
   }
@@ -445,6 +481,7 @@ section.call-to-action {
           width: 100%;
           background-color: rgba(0, 0, 0, 0.6);
           color: $accent-color;
+          box-shadow: none;
         }
       }
     }

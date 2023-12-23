@@ -86,7 +86,7 @@ const IndexPage = () => {
 
   return (
     <main id="home">
-      <Section className={"hero"}>
+      <Section className="hero" enableBackgroundDiv={true}>
         <div className="container first">
           <h3>SERVICIO LEGAL DE EXCELENCIA</h3>
           <h2>
