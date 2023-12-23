@@ -155,7 +155,7 @@ const IndexPage = () => {
                 <li key={service}>
                   {index == 0 && <h3>{category}</h3>}
                   <ReactSVG src={checkmark} />
-                  {service}
+                  <p>{service}</p>
                 </li>
               </>
             ))}

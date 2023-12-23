@@ -32,13 +32,22 @@ body {
   color: $dark-background;
 }
 
-main > section:nth-child(odd):not(.call-to-action) {
+main > section:nth-child(even):not(.call-to-action):not(.hero) {
   background-color: $light-background;
+  input,
+  textarea {
+    background-color: $medium-background;
+    color: $light-background;
+    &::placeholder {
+      color: $light-background;
+      opacity: 1; /* Firefox */
+    }
+  }
 }
 
-main > section:nth-child(even):not(.call-to-action) {
+main > section:nth-child(odd):not(.call-to-action):not(.hero) {
   background-color: $dark-background;
-  color: white;
+  color: $light-background;
 }
 
 button {
@@ -46,7 +55,7 @@ button {
   font-size: 1.2;
   text-transform: uppercase;
   font-weight: 500;
-  color: white;
+  color: $light-background;
   border-radius: 3px;
   background-color: $accent-color;
   letter-spacing: 2px;
@@ -203,6 +212,7 @@ section.services {
           top: -2.5rem;
           left: 0rem;
           text-transform: capitalize;
+          color: inherit;
           width: fit-content;
           @include underlinedTitle();
         }
@@ -212,8 +222,10 @@ section.services {
         padding: 1rem 0rem;
         position: relative;
         background-color: $medium-background;
-
         padding-left: 1.5rem;
+        p {
+          color: $light-background;
+        }
         svg {
           position: absolute;
           transform: translate(-50%, -50%);
@@ -265,7 +277,7 @@ section.team {
           }
           .gatsby-image-wrapper {
             max-height: 16rem;
-            height: 100%;
+
             aspect-ratio: 1/1;
             border-radius: 1px;
           }
@@ -340,7 +352,7 @@ section.email {
       gap: 1rem;
 
       h2 {
-        font-weight: 400;
+        font-weight: 500;
         text-align: center;
       }
       .animation {
@@ -410,11 +422,11 @@ section.email {
         }
         textarea,
         input {
-          background-color: white;
           text-transform: uppercase;
           padding: 0.5rem;
           padding-left: 2rem;
           width: 100%;
+          border-radius: 3px;
           &:focus {
             outline: 4px solid $accent-color;
           }
@@ -426,7 +438,7 @@ section.email {
 
 section.call-to-action {
   background-color: $accent-color;
-  color: white;
+  color: $light-background;
   padding-top: 2rem;
   padding-bottom: 2rem;
   .content {
