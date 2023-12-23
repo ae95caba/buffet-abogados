@@ -171,7 +171,6 @@ main > section {
 footer {
   background-color: black;
 
-  text-align: center;
   color: white;
   padding-bottom: $universal-y-padding;
   padding-top: $universal-y-padding;
@@ -183,7 +182,7 @@ footer {
     margin: auto;
     flex-direction: column;
     gap: 5rem;
-    .container {
+    .container.first {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -198,7 +197,7 @@ footer {
 
           gap: 1rem;
           align-items: center;
-          text-align: left;
+
           svg {
             width: 2rem;
 
@@ -223,34 +222,43 @@ footer {
         }
       }
     }
-  }
-  .icons {
-    display: flex;
+    .container.second {
+      display: flex;
+      flex-direction: column;
 
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 4rem;
-    svg {
-      width: 2rem;
-      height: auto;
-      path {
-        fill: $accent-color;
+      gap: 2rem;
+      h2 {
+        text-align: center;
+      }
+      .social {
+        display: flex;
+
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 4rem;
+        svg {
+          width: 2rem;
+          height: auto;
+          path {
+            fill: $accent-color;
+          }
+        }
       }
     }
-  }
-  .copyright {
-    //display: none;
+    .copyright {
+      //display: none;
 
-    text-align: center;
-    letter-spacing: 2px;
-    word-spacing: 4px;
-    font-weight: 900;
-    font-size: 0.85rem;
-    line-height: 1.6rem;
+      text-align: center;
+      letter-spacing: 2px;
+      word-spacing: 4px;
+      font-weight: 900;
 
-    p:nth-of-type(2),
-    a {
-      word-break: break-all;
+      line-height: 1.6rem;
+
+      p:nth-of-type(2),
+      a {
+        word-break: break-all;
+      }
     }
   }
 }

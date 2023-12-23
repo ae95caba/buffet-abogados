@@ -10,7 +10,7 @@ import facebook from "../images/facebook.svg"
 import whatsapp from "../images/whatsapp.svg"
 import Logo from "./Logo"
 import Tabs from "./Tabs"
-const links = {
+const social = {
   instagram: { url: "https://www.instagram.com/", icon: instagram },
   facebook: { url: "https://www.facebook.com/", icon: facebook },
   linkedin: { url: "https://www.linkedin.com/", icon: linkedin },
@@ -36,7 +36,7 @@ export default function Footer() {
   return (
     <footer>
       <div className="content">
-        <div className="container">
+        <div className="container first">
           {Object.keys(contact).length > 0 && (
             <div className="contact">
               {Object.keys(contact).map(plataform => (
@@ -58,17 +58,20 @@ export default function Footer() {
             </nav>
           </div>
         </div>
-        {Object.keys(links).length > 0 && (
-          <div className="icons">
-            {Object.keys(links).map(plataform => (
-              <a
-                target="_blank"
-                rel="noopener noreferrer"
-                href={links[plataform].url}
-              >
-                <ReactSVG src={links[plataform].icon} />
-              </a>
-            ))}
+        {Object.keys(social).length > 0 && (
+          <div className="container second">
+            <h2>Siguenos en las redes para ver mas</h2>
+            <div className="social">
+              {Object.keys(social).map(plataform => (
+                <a
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  href={social[plataform].url}
+                >
+                  <ReactSVG src={social[plataform].icon} />
+                </a>
+              ))}
+            </div>
           </div>
         )}
 
