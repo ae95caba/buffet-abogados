@@ -2,6 +2,7 @@ $accent-color: rgb(214, 181, 110);
 $light-background: #f5f5f5;
 $dark-background: #454a53;
 $medium-background: #4e535c;
+$universal-width: 1200px;
 $cool-shadow: 0 0 5px rgba(0, 0, 0, 0.502);
 $bold-shadow: 0 0 10px rgba(214, 181, 110, 0.902);
 $header-height: 68px;
@@ -61,6 +62,57 @@ button {
   letter-spacing: 2px;
   word-spacing: 5px;
   cursor: pointer;
+}
+
+section.gallery {
+  padding-left: 0rem;
+  padding-right: 0rem;
+  .content {
+    .container {
+      margin: auto;
+      overflow: hidden;
+      width: fit-content;
+      max-width: 100%;
+      .slick-slider {
+        width: $universal-width;
+        .slick-list {
+          overflow-x: clip;
+          overflow-y: visible;
+          padding-left: 1rem;
+          .gatsby-image-wrapper {
+            height: 18rem;
+
+            aspect-ratio: 1/1;
+
+            border-radius: 1.5rem;
+            box-shadow: $cool-shadow;
+          }
+        }
+      }
+      position: relative;
+
+      &:before,
+      &:after {
+        position: absolute;
+        top: 0;
+        pointer-events: none;
+        width: 60px;
+        height: 100%;
+
+        content: "";
+        z-index: 2;
+      }
+      &:before {
+        left: 0;
+        background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+      }
+
+      &:after {
+        right: 0;
+        background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+      }
+    }
+  }
 }
 
 section.hero {
@@ -183,9 +235,10 @@ section.about {
     }
     p:first-letter {
       font-size: 4rem;
+      color: $accent-color;
       font-weight: 900;
       initial-letter: 2;
-      margin-right: 1rem;
+      margin-right: 0.8rem;
     }
   }
 }

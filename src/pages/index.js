@@ -28,6 +28,7 @@ import { ReactSVG } from "react-svg"
 import user from "../images/user.svg"
 import email from "../images/email.svg"
 import feather from "../images/feather.svg"
+import SimpleSlider from "../components/SlickCarousel"
 
 const utmParameters = `?utm_source=starter&utm_medium=start-page&utm_campaign=default-starter`
 
@@ -199,6 +200,21 @@ const IndexPage = () => {
             </li>
           ))}
         </ul>
+      </Section>
+      <Section className="gallery">
+        <div className="container">
+          <SimpleSlider
+            speed={1000}
+            autoplaySpeed={3500}
+            slidesToShow={3}
+            fade={false}
+          >
+            <Member1 /> <Member1 />
+            <Member2 /> <Member2 />
+            <Member3 />
+            <Member4 /> <Member3 />
+          </SimpleSlider>
+        </div>
       </Section>
       <Section className={"email"} id="contactanos">
         <div className="container">
