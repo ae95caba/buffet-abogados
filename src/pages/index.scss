@@ -1,7 +1,7 @@
 $accent-color: rgb(214, 181, 110);
-$light-background: #f5f5f5;
-$dark-background: #454a53;
-$medium-background: #4e535c;
+$light-color: #f5f5f5;
+$dark-color: #454a53;
+$medium-color: #4e535c;
 $universal-width: 1200px;
 $cool-shadow: 0 0 5px rgba(0, 0, 0, 0.502);
 $bold-shadow: 0 0 10px rgba(214, 181, 110, 0.902);
@@ -30,25 +30,30 @@ $header-height: 68px;
 }
 
 body {
-  color: $dark-background;
+  color: $dark-color;
 }
 
-main > section:nth-child(even):not(.call-to-action):not(.hero) {
-  background-color: $light-background;
+@mixin colorPalette($background-color, $color) {
+  background-color: $background-color;
+
+  color: $color;
+
   input,
   textarea {
-    background-color: $medium-background;
-    color: $light-background;
+    background-color: $color;
+    color: $background-color;
     &::placeholder {
-      color: $light-background;
+      color: $background-color;
       opacity: 1; /* Firefox */
     }
   }
 }
 
+main > section:nth-child(even):not(.call-to-action):not(.hero) {
+  @include colorPalette($light-color, $dark-color);
+}
 main > section:nth-child(odd):not(.call-to-action):not(.hero) {
-  background-color: $dark-background;
-  color: $light-background;
+  @include colorPalette($dark-color, $light-color);
 }
 
 button {
@@ -56,7 +61,7 @@ button {
   font-size: 1.2;
   text-transform: uppercase;
   font-weight: 500;
-  color: $light-background;
+  color: $light-color;
   border-radius: 3px;
   background-color: $accent-color;
   letter-spacing: 2px;
@@ -80,11 +85,11 @@ section.gallery {
           overflow-y: visible;
           padding-left: 1rem;
           .gatsby-image-wrapper {
-            height: 18rem;
+            height: 16rem;
 
             aspect-ratio: 1/1;
 
-            border-radius: 1.5rem;
+            border-radius: 3px;
             box-shadow: $cool-shadow;
           }
         }
@@ -104,12 +109,20 @@ section.gallery {
       }
       &:before {
         left: 0;
-        background: linear-gradient(to left, rgba(255, 255, 255, 0), white);
+        background: linear-gradient(
+          to left,
+          rgba(255, 255, 255, 0),
+          $light-color
+        );
       }
 
       &:after {
         right: 0;
-        background: linear-gradient(to right, rgba(255, 255, 255, 0), white);
+        background: linear-gradient(
+          to right,
+          rgba(255, 255, 255, 0),
+          $light-color
+        );
       }
     }
   }
@@ -173,7 +186,7 @@ section.hero {
     }
     h2,
     p {
-      color: $light-background;
+      color: $light-color;
     }
   }
 
@@ -187,7 +200,7 @@ section.hero {
       box-shadow: $bold-shadow;
       top: 40%;
       left: -$leng;
-      background-color: white;
+      background-color: $light-color;
       padding: 0.8rem;
 
       span {
@@ -265,7 +278,7 @@ section.services {
           top: -2.5rem;
           left: 0rem;
           text-transform: capitalize;
-          color: inherit;
+
           width: fit-content;
           @include underlinedTitle();
         }
@@ -274,10 +287,10 @@ section.services {
         text-align: center;
         padding: 1rem 0rem;
         position: relative;
-        background-color: $medium-background;
+        background-color: $medium-color;
         padding-left: 1.5rem;
         p {
-          color: $light-background;
+          color: $light-color;
         }
         svg {
           position: absolute;
@@ -491,7 +504,7 @@ section.email {
 
 section.call-to-action {
   background-color: $accent-color;
-  color: $light-background;
+  color: $light-color;
   padding-top: 2rem;
   padding-bottom: 2rem;
   .content {
@@ -545,7 +558,7 @@ section.call-to-action {
           left: auto;
           width: 100%;
           background-color: rgba(0, 0, 0, 0.6);
-          color: $accent-color;
+          color: $light-color;
           box-shadow: none;
         }
       }
