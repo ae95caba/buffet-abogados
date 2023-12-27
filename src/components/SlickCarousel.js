@@ -11,7 +11,6 @@ export default function SimpleSlider({
   fade,
 }) {
   var settings = {
-    arrows: false,
     fade: fade,
     dots: false,
     infinite: true,
