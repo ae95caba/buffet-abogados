@@ -11,8 +11,8 @@ export default function SimpleSlider({
   fade,
 }) {
   var settings = {
-    fade: fade,
-    dots: false,
+    fade: false,
+    dots: true,
     infinite: true,
     speed: speed,
     autoplay: true,

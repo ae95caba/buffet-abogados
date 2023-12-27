@@ -75,7 +75,7 @@ section.gallery {
   .content {
     .container {
       margin: auto;
-      overflow: hidden;
+      overflow-x: clip;
       width: fit-content;
       max-width: 100%;
       .slick-slider {
@@ -83,8 +83,11 @@ section.gallery {
         $padding-left: 2rem;
         padding-left: $padding-left;
         position: static;
+        .slick-dots {
+          left: 0px;
+        }
         .slick-arrow {
-          z-index: 99;
+          z-index: 1;
 
           &.slick-prev {
             left: calc($padding-left + 1rem);
@@ -93,12 +96,12 @@ section.gallery {
             right: calc($padding-left + 1rem);
           }
           &::before {
-            font-size: 3rem;
+            font-size: 2.5rem;
             position: absolute;
             transform: translate(-50%, -50%);
             top: 50%;
             left: 50%;
-            color: $accent-color;
+            color: $dark-color;
           }
         }
 
