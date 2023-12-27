@@ -87,6 +87,10 @@ section.gallery {
         position: static;
         .slick-dots {
           left: 0px;
+          bottom: -50px;
+          button:before {
+            font-size: 0.8rem;
+          }
         }
         .slick-arrow {
           z-index: 1;
@@ -473,9 +477,6 @@ section.email {
       flex-direction: column;
 
       gap: 2rem;
-      legend {
-        margin-bottom: 2rem;
-      }
 
       label[for="message"] {
         svg {
