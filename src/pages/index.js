@@ -150,17 +150,17 @@ const IndexPage = () => {
       <Section className={"services"} id={"areas-de-practica"}>
         <h2>Areas de practica</h2>
         {Object.keys(services).map(category => (
-          <ul key={category}>
-            {services[category].map((service, index) => (
-              <>
+          <div className="container">
+            <h3>{category}</h3>
+            <ul key={category}>
+              {services[category].map((service, index) => (
                 <li key={service}>
-                  {index == 0 && <h3>{category}</h3>}
                   <ReactSVG src={checkmark} />
-                  <p>{service}</p>
+                  {service}
                 </li>
-              </>
-            ))}
-          </ul>
+              ))}
+            </ul>
+          </div>
         ))}
       </Section>
       <Section className={"team"} id="nuestro-equipo">
