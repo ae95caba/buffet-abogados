@@ -173,10 +173,11 @@ footer {
   background-color: black;
 
   color: $light-background;
-  padding-bottom: $universal-y-padding;
+  padding-bottom: 2rem;
   padding-top: $universal-y-padding;
   padding-right: $universal-x-padding;
   padding-left: $universal-x-padding;
+
   .content {
     max-width: $universal-width;
     display: flex;
